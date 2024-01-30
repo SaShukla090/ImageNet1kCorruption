@@ -112,6 +112,24 @@ def buildmodel(model_name):
         model = models.shufflenet_v2_x0_5(pretrained = True)
     elif model_name == 'shufflenet_v2_x2_0':
         model = models.shufflenet_v2_x2_0(pretrained = True)
+    elif model_name == "vit_b_16":
+        model = torchvision.models.vit_b_16(weights=torchvision.models.ViT_B_16_Weights.IMAGENET1K_V1)
+
+    elif model_name == "vit_b_32":
+        model = torchvision.models.vit_b_32(weights=torchvision.models.ViT_B_32_Weights.IMAGENET1K_V1)
+    
+    elif model_name == "vit_l_16":
+        model = torchvision.models.vit_l_16(weights=torchvision.models.ViT_L_16_Weights.IMAGENET1K_V1)
+    
+    elif model_name == "vit_l_32":
+        model = torchvision.models.vit_l_32(weights=torchvision.models.ViT_L_32_Weights.IMAGENET1K_V1)
+    
+    elif model_name == "vit_h_14":
+        model = torchvision.models.vit_h_14(weights=torchvision.models.ViT_H_14_Weights.IMAGENET1K_V1)
+
+    else:
+        AssertionError("model name not found")
+
     return model
     
 
